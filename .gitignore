@@ -1,0 +1,13 @@
+node_modules
+dist
+*.local
+.DS_Store
+
+# test artifacts
+coverage
+
+# design-sync baseline (working snapshot of the last Claude Design handoff)
+.design-baseline
+
+# claude-fleet worktrees (parallel CLI instances; not source)
+.claude/worktrees/
