@@ -20,7 +20,7 @@ npm run format       # prettier --write .
 
 ## 这是什么 / 长什么样
 
-- **双语落地页**:Nav → Hero(含聊天 demo)→ 关于 (About) → 作品 (Works) → FAQ → 页脚。区块 spec 见 [SPEC.md](./SPEC.md);详细视觉/交互设计见 [DESIGN.md](./DESIGN.md)(从 Claude Design handoff `y7W2EG` 落地)。
+- **双语落地页**:Nav → Hero(含聊天 demo)→ 作品 (Works) → FAQ → 页脚。区块 spec 见 [SPEC.md](./SPEC.md);详细视觉/交互设计见 [DESIGN.md](./DESIGN.md)(从 Claude Design handoff `8Q3zKq` 落地)。
 - **深色主题**:`<html data-theme="dark">`,Nav 里可切深/浅;对齐 Agentaily 品牌(极客风、简约、大气、科技感)。
 - **i18n**:`LocaleProvider` + `useMessages()`(`src/i18n/`,文案全在 `en.json` / `zh.json`),默认中文,Nav 里可切英文。
 

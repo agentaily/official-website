@@ -8,12 +8,12 @@
 ## 设计在哪做(来源)
 
 - **Claude Design 项目**:projectId = `1c110e32-5467-4978-883e-36ae10f3bd1c`(在 claude.ai/design 这个项目里开新对话设计 / 改页面)。
-- **最新 handoff 引用** = `y7W2EGsfsjhDNPg2OAXnBQ`(落地页设计稿,含 chat5 页脚 + 代码清理;**取代**旧的 `Gop7LedEF_n8rMHzWaDZ-w`)—— 第一个 fleet worker 据此 `design-sync` 落地落地页。
+- **最新 handoff 引用** = `8Q3zKqB6xqQ5Dd1YH2VXgg`(落地页设计稿;chat6 去掉 About 区块 + 导航「作者」项;**取代** `y7W2EGsfsjhDNPg2OAXnBQ` / `Gop7LedEF_n8rMHzWaDZ-w`)—— fleet worker 据此 `design-sync` 落地。
 - 流程:在 claude.ai/design 对应项目里设计页面 → 复制 handoff 链接 → `design-sync` 三路合并进代码。取法 / 合并细节见 `design-via-claude-design` + `design-sync` skill。**别和上游组件库 (`@agentaily/design-system`) 的设计项目搞混**(那个是设计组件本身的;本仓只有缺组件 / 缺 seam 时才往那反馈,**叫人**)。
 
 ## 设计原则 / 交互
 
-- **落地页(单页滚动)**:Nav → Hero(含聊天 demo + 主 CTA)→ 关于 / 主理人 (About) → 作品 (Works) → FAQ → 页脚,自上而下叙事。
+- **落地页(单页滚动)**:Nav → Hero(含聊天 demo + 主 CTA)→ 作品 (Works) → FAQ → 页脚,自上而下叙事(chat6 去掉了 About / 主理人区块)。
 - **深色主题默认**(`data-theme="dark"`):品牌随上游 DS —— 极客风、简约、大气、科技感。
 - **双语 (en/zh)**:文案走 i18n catalog,默认中文,可切换;切换不丢滚动位置。
 - **响应式**:移动优先;断点 / 栅格随设计稿定,优先用 DS 布局原语。
@@ -29,13 +29,12 @@
 
 ## 页面 / 界面清单(+ 设计状态)
 
-落地页是**单页滚动**,从最新 handoff `y7W2EGsfsjhDNPg2OAXnBQ`(含 chat5 页脚 + 代码清理)落地。**活动渲染树**:Nav → Hero → 关于 → 作品 → FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact 是**死组件,不实现**(chat5 已删)。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
+落地页是**单页滚动**,从最新 handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)落地。**活动渲染树**:Nav → Hero → 作品 → FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是**死组件,不实现**。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
 
 | 区块                                        | 设计状态  | 对应代码                                              |
 | ------------------------------------------- | --------- | ----------------------------------------------------- |
 | **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                              |
 | **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx` |
-| **关于 (About)**(主理人:头像 + 资料表)      | ✅ 已实现 | `src/sections/About.tsx`                              |
 | **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                              |
 | **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                |
 | **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                       |
@@ -44,6 +43,6 @@
 
 ## 设计 ↔ 代码映射
 
-- `.design-baseline/`:上次同步的设计快照(`design-sync` 三路 diff 的基线;改设计后刷新)。**首次同步已落**:handoff `y7W2EGsfsjhDNPg2OAXnBQ` 的原型快照存在 `.design-baseline/y7W2EGsfsjhDNPg2OAXnBQ/`(本仓 `.gitignore` 把整个目录设为本地工作快照、不入库)。**它是冻结快照,任何 formatter 都不可碰** —— 已在 `.prettierignore` 列出 `.design-baseline/`,否则 `prettier --write .` 会改写基线、让下次三路 diff 满是假冲突。
+- `.design-baseline/`:上次同步的设计快照(`design-sync` 三路 diff 的基线;改设计后刷新)。**当前基线**:handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)的原型快照存在 `.design-baseline/8Q3zKqB6xqQ5Dd1YH2VXgg/`(本仓 `.gitignore` 把整个目录设为本地工作快照、不入库)。**它是冻结快照,任何 formatter 都不可碰** —— 已在 `.prettierignore` 列出 `.design-baseline/`,否则 `prettier --write .` 会改写基线、让下次三路 diff 满是假冲突。
 - 落地链:`designer`(去 Claude Design 设计、拿 handoff)→ `design-syncer`(`design-sync` 进代码,保留本地工程改动)。
 - **改设计 → 同一次更新本文件**(文档与代码同步纪律:页面清单 / 设计状态别漂移)。

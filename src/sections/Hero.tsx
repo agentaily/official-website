@@ -11,7 +11,7 @@ import { useMessages } from "../i18n";
 import { GenCanvas, Typewriter } from "./heroDemo";
 
 // Where the "let's talk" CTA points. Not user-visible copy (it's an action
-// target); the address itself also appears as catalog text in About / Footer.
+// target); the address itself also appears as catalog text in Works / Footer.
 const CONTACT_MAILTO = "mailto:yarnb@foxmail.com";
 
 function scrollToId(id: string) {

@@ -2,8 +2,8 @@
    Agentaily 官网 — landing page layout
    Composes the @agentaily/design-system tokens (palette / type / spacing /
    effects come from its styles.css — never redefined here). Prefix: aw-
-   (agentaily web). Active render tree only: Nav · Hero · About · Works · FAQ ·
-   Footer. The DS supplies the components; this sheet is just page layout.
+   (agentaily web). Active render tree only: Nav · Hero · Works · FAQ · Footer.
+   The DS supplies the components; this sheet is just page layout.
    ============================================================ */
 
 .aw {
@@ -528,118 +528,6 @@
   transform: translate(2px, -2px);
 }
 
-/* ---------- about / 关于我 ---------- */
-.aw-about {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 48px;
-  align-items: stretch;
-}
-.aw-about__lead {
-  display: flex;
-  flex-direction: column;
-  padding: 14px 0;
-}
-.aw-about__photo {
-  position: relative;
-  flex: 1 1 0;
-  min-height: 0;
-  width: auto;
-  align-self: flex-start;
-  aspect-ratio: 768 / 1024;
-  margin-bottom: 16px;
-}
-.aw-about__photo.ax-ticks::before,
-.aw-about__photo.ax-ticks::after {
-  border-color: var(--text-faint);
-  width: 9px;
-  height: 9px;
-}
-.aw-about__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-3);
-  border: 1px solid var(--border-strong);
-  display: block;
-}
-.aw-about__name {
-  margin: 6px 0 0;
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
-  color: var(--text-body);
-}
-.aw-about__role {
-  margin: 8px 0 0;
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-  letter-spacing: 0.02em;
-  color: var(--text-faint);
-}
-.aw-about__bio {
-  margin: 10px 0 0;
-  font-size: var(--text-xs);
-  color: var(--text-faint);
-  line-height: var(--leading-body);
-  max-width: 36ch;
-  text-wrap: pretty;
-}
-.aw-about__side {
-  max-width: 560px;
-  justify-self: end;
-  width: 100%;
-}
-.aw-about__facts {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border-default);
-}
-.aw-about__facts > div {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border-default);
-}
-.aw-about__facts > div.aw-fact--m {
-  display: none;
-}
-.aw-fact__avatar {
-  height: 24px;
-  width: auto;
-  border-radius: var(--radius-1);
-  border: 1px solid var(--border-strong);
-  display: block;
-}
-.aw-about__facts dt {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  flex-shrink: 0;
-}
-.aw-about__facts dd {
-  margin: 0;
-  font-size: var(--text-sm);
-  color: var(--text-body);
-  text-align: right;
-}
-.aw-fact__link {
-  color: var(--text-body);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border-default);
-  transition: border-color var(--dur-1) var(--ease-out);
-}
-.aw-fact__link:hover {
-  border-bottom-color: var(--border-strong);
-}
-
 /* ---------- faq ---------- */
 .aw-faq {
   max-width: 760px;
@@ -707,22 +595,8 @@
   }
 }
 @media (max-width: 900px) {
-  .aw-works,
-  .aw-about {
+  .aw-works {
     grid-template-columns: 1fr;
-  }
-  .aw-about {
-    gap: 32px;
-  }
-  .aw-about__lead {
-    display: none;
-  }
-  .aw-fact__avatar {
-    height: 24px;
-  }
-  .aw-about__facts > div.aw-fact--m {
-    display: flex;
-    align-items: center;
   }
   .aw-hero__h {
     font-size: var(--text-3xl);

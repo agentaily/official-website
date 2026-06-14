@@ -4,7 +4,6 @@
   },
   "nav": {
     "links": [
-      { "label": "作者", "href": "#about" },
       { "label": "作品", "href": "#works" },
       { "label": "FAQ", "href": "#faq" }
     ],
@@ -52,24 +51,6 @@
         "line": "问卷生成好了，题目能加能改。",
         "ph": "比如「加一道开放题」…"
       }
-    ]
-  },
-  "about": {
-    "name": "杨斌",
-    "role": "AI 应用全栈工程师",
-    "bio": "agentaily 「聊天 × 万物」的作者。",
-    "avatarLabel": "头像",
-    "nameLabel": "姓名",
-    "bioLabel": "简介",
-    "facts": [
-      { "k": "星座", "v": "水瓶座" },
-      { "k": "喜欢吃的菜", "v": "酱牛肉" },
-      { "k": "经验", "v": "11 年前端 · 多端交付" },
-      { "k": "方向", "v": "AI 应用 · Agent" },
-      { "k": "主栈", "v": "React · RN · Next.js · TS · Node.js · Python" },
-      { "k": "角色", "v": "AI 应用全栈工程师" },
-      { "k": "开源", "v": "github.com/yarnovo", "href": "https://github.com/yarnovo" },
-      { "k": "邮箱", "v": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" }
     ]
   },
   "works": {

@@ -1,6 +1,6 @@
 # SPEC — Agentaily 官网 (official-website)
 
-> 这是落地页的**架构真相**。详细视觉 / 交互设计见 [DESIGN.md](./DESIGN.md) + Claude Design handoff;落地页已由 fleet worker 从 handoff `y7W2EG` 实现(PR #1)。和 [`features/`](./features)(行为真相)、[DESIGN.md](./DESIGN.md)(视觉真相)三足鼎立。
+> 这是落地页的**架构真相**。详细视觉 / 交互设计见 [DESIGN.md](./DESIGN.md) + Claude Design handoff;落地页已由 fleet worker 从 handoff `8Q3zKq` 实现(PR #1)。和 [`features/`](./features)(行为真相)、[DESIGN.md](./DESIGN.md)(视觉真相)三足鼎立。
 
 ## 定位
 
@@ -8,13 +8,12 @@ Agentaily Form 的**官方落地页**:一个**纯静态前端站**,双语 (en/zh
 
 ## 落地页区块(单页滚动)
 
-活动渲染树:**Nav → Hero → 关于 → 作品 → FAQ → 页脚**。区块 → 代码映射见 [DESIGN.md](./DESIGN.md)。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact 是死组件,不实现(chat5 已删)。
+活动渲染树:**Nav → Hero → 作品 → FAQ → 页脚**(chat6 去掉了 About)。区块 → 代码映射见 [DESIGN.md](./DESIGN.md)。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是死组件,不实现。
 
 | 区块 | 用途 | 状态 |
 | --- | --- | --- |
-| **Nav** | BrandMark + 锚点导航 + 语言(en/zh)/ 深浅主题切换,sticky | ✅ 已实现 |
+| **Nav** | BrandMark + 锚点导航(作品 / FAQ)+ 语言(en/zh)/ 深浅主题切换,sticky | ✅ 已实现 |
 | **Hero** | 一句话价值主张(RotatingTagline)+ 主 CTA + 抽象「聊天 × 万物」demo | ✅ 已实现 |
-| **关于 (About)** | 主理人:头像 + 身份 + 资料表(经验 / 方向 / 主栈 / 开源 / 邮箱…) | ✅ 已实现 |
 | **作品 (Works)** | 三张作品卡(已上线 / 筹备中 / 可定制),外链带 `rel="noopener noreferrer"` | ✅ 已实现 |
 | **FAQ** | 合作向 Accordion(接什么项目 / 怎么收费 / 工期…),首项默认展开 | ✅ 已实现 |
 | **页脚 (Footer)** | 品牌 + 标语 + 链接列 + 版权 + ICP 备案(链工信部);居中容器 | ✅ 已实现 |

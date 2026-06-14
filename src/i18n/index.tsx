@@ -26,13 +26,6 @@ export interface DemoItem {
   ph: string;
 }
 
-export interface Fact {
-  k: string;
-  v: string;
-  /** Optional outbound link for the value (mailto / https). */
-  href?: string;
-}
-
 export interface WorkItem {
   /** Drives the badge variant: ok | soon | custom. */
   status: string;
@@ -73,15 +66,6 @@ export interface Messages {
     ctaSecondary: string;
   };
   demo: { live: string; previewLabel: string; model: string; items: DemoItem[] };
-  about: {
-    name: string;
-    role: string;
-    bio: string;
-    avatarLabel: string;
-    nameLabel: string;
-    bioLabel: string;
-    facts: Fact[];
-  };
   works: { label: string; title: string; subtitle: string; items: WorkItem[] };
   faq: { label: string; title: string; items: FaqItem[] };
   footer: {

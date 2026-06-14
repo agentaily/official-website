@@ -4,7 +4,6 @@
   },
   "nav": {
     "links": [
-      { "label": "Author", "href": "#about" },
       { "label": "Works", "href": "#works" },
       { "label": "FAQ", "href": "#faq" }
     ],
@@ -52,24 +51,6 @@
         "line": "Survey's generated — add or edit questions freely.",
         "ph": "e.g. 'add an open question'…"
       }
-    ]
-  },
-  "about": {
-    "name": "yarnb",
-    "role": "AI app full-stack engineer",
-    "bio": "Author of agentaily — Chat × Everything.",
-    "avatarLabel": "Avatar",
-    "nameLabel": "Name",
-    "bioLabel": "Bio",
-    "facts": [
-      { "k": "Sign", "v": "Aquarius" },
-      { "k": "Favorite dish", "v": "Braised beef" },
-      { "k": "Experience", "v": "11 yrs frontend · multi-platform" },
-      { "k": "Focus", "v": "AI apps · Agents" },
-      { "k": "Stack", "v": "React · RN · Next.js · TS · Node.js · Python" },
-      { "k": "Role", "v": "AI app full-stack engineer" },
-      { "k": "Open source", "v": "github.com/yarnovo", "href": "https://github.com/yarnovo" },
-      { "k": "Email", "v": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" }
     ]
   },
   "works": {
