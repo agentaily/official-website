@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 
 // Design-system tokens + global styles (fonts, colors, motif utilities). Load once.
 import "@agentaily/design-system/styles.css";
+// Landing-page layout (the aw-* classes that compose the DS tokens above).
+import "./styles/landing.css";
 
 import App from "./App";
 

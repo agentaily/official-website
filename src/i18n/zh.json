@@ -1,5 +1,166 @@
 {
-  "brand": "Agentaily Form",
-  "tagline": "对话式表单,由 Agent 为你设计。",
-  "wip": "官网建设中"
+  "meta": {
+    "title": "Agentaily · 聊天 × 万物"
+  },
+  "nav": {
+    "links": [
+      { "label": "作者", "href": "#about" },
+      { "label": "作品", "href": "#works" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "switchLang": "English",
+    "toggleTheme": "切换主题"
+  },
+  "hero": {
+    "badge": "聊天 × 万物",
+    "prefix": "聊天，",
+    "phrases": ["生成表单", "设计工具", "构建应用", "造点东西"],
+    "sub": "会聊天、有审美、懂需求，就能得到你想要的一切。",
+    "ctaPrimary": "聊聊合作",
+    "ctaSecondary": "看看作品"
+  },
+  "demo": {
+    "live": "LIVE",
+    "previewLabel": "生成产物预览（抽象）",
+    "model": "DeepSeek",
+    "items": [
+      {
+        "key": "form",
+        "q": "做一个活动报名表",
+        "steps": ["识别为「报名」场景", "推断字段：姓名 / 手机号", "场次→单选，备注→选填"],
+        "line": "好，报名表给你拼好了，点任意字段就能改。",
+        "ph": "比如「手机号设为必填」…"
+      },
+      {
+        "key": "dash",
+        "q": "做一个运营数据看板",
+        "steps": ["确认要看的指标", "选图表：趋势 + 关键数", "排好布局 · 实时刷新"],
+        "line": "看板搭好了，指标和图表都能随时换。",
+        "ph": "比如「加一个转化率」…"
+      },
+      {
+        "key": "flow",
+        "q": "搭一个请假审批流",
+        "steps": ["梳理审批节点", "申请 → 主管 → HR", "补上通过 / 驳回分支"],
+        "line": "流程接好了，节点顺序随你调。",
+        "ph": "比如「加一级总监审批」…"
+      },
+      {
+        "key": "survey",
+        "q": "生成一份满意度问卷",
+        "steps": ["明确调研目标", "题型：单选 + 评分", "加逻辑跳转 · 匿名"],
+        "line": "问卷生成好了，题目能加能改。",
+        "ph": "比如「加一道开放题」…"
+      }
+    ]
+  },
+  "about": {
+    "name": "杨斌",
+    "role": "AI 应用全栈工程师",
+    "bio": "agentaily 「聊天 × 万物」的作者。",
+    "avatarLabel": "头像",
+    "nameLabel": "姓名",
+    "bioLabel": "简介",
+    "facts": [
+      { "k": "星座", "v": "水瓶座" },
+      { "k": "喜欢吃的菜", "v": "酱牛肉" },
+      { "k": "经验", "v": "11 年前端 · 多端交付" },
+      { "k": "方向", "v": "AI 应用 · Agent" },
+      { "k": "主栈", "v": "React · RN · Next.js · TS · Node.js · Python" },
+      { "k": "角色", "v": "AI 应用全栈工程师" },
+      { "k": "开源", "v": "github.com/yarnovo", "href": "https://github.com/yarnovo" },
+      { "k": "邮箱", "v": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" }
+    ]
+  },
+  "works": {
+    "label": "Works",
+    "title": "近期作品",
+    "subtitle": "每一个，都为了解决某个场景里的实际问题。",
+    "items": [
+      {
+        "status": "ok",
+        "statusLabel": "已上线",
+        "featured": true,
+        "name": "Form Design",
+        "zh": "聊天生成在线表单",
+        "desc": "说一句话，得到一张能收数据的在线表单。聊着改字段，发链接、扫码即填，回复自动汇总。",
+        "href": "https://form-design.agentaily.com/",
+        "link": "form-design.agentaily.com"
+      },
+      {
+        "status": "soon",
+        "statusLabel": "筹备中",
+        "name": "下一个",
+        "zh": "更多「聊天 × 万物」",
+        "desc": "同样的方式，换一个东西。还在打磨，先把表单做好。想知道是什么？保持关注。",
+        "href": null,
+        "link": "敬请期待"
+      },
+      {
+        "status": "custom",
+        "statusLabel": "可定制",
+        "name": "你的点子",
+        "zh": "想要一个聊天驱动的工具？",
+        "desc": "如果你心里已经有个想做的东西——说需求，我来把它做出来。从一句话开始。",
+        "href": "mailto:yarnb@foxmail.com",
+        "link": "聊聊你的想法"
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "关于合作，常被问到的",
+    "items": [
+      {
+        "id": "q1",
+        "title": "你接什么样的项目？",
+        "content": "聊天驱动的小工具、Agent、内部流程工具最合适——能用一句话描述、用对话操作的那类。太大的系统我一个人吃不下，但可以帮你想清楚要不要做、怎么做。"
+      },
+      {
+        "id": "q2",
+        "title": "怎么收费？",
+        "content": "看范围聊。小工具可能就是个朋友价甚至顺手做；正经定制按项目报。模型调用一般走 BYOK（你自己的 Key），这部分钱不经我手。"
+      },
+      {
+        "id": "q3",
+        "title": "多久能做好？",
+        "content": "我是一个人，慢工出细活。简单的几天，复杂的按方案排期。我宁愿说实话排期，也不想答应做不到的时间。"
+      },
+      {
+        "id": "q4",
+        "title": "我只是有个想法，还没想清楚，也能找你吗？",
+        "content": "当然。把模糊的想法聊清楚，本来就是合作的第一步。哪怕最后结论是「这个不值得做」，也算帮你省了时间。"
+      },
+      {
+        "id": "q5",
+        "title": "「聊天 × 万物」后面还有什么？",
+        "content": "表单是第一站。接下来会用同样的方式做更多小东西。具体是什么先卖个关子——做好一个，再说下一个。"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "聊天，改变世界。",
+    "cols": [
+      {
+        "head": "作品",
+        "links": [
+          { "label": "Form Design · 已上线", "href": "https://form-design.agentaily.com/" },
+          { "label": "更多 · 筹备中", "href": null }
+        ]
+      },
+      {
+        "head": "联系",
+        "links": [
+          { "label": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" },
+          { "label": "微信 ybkeepgoing", "href": null },
+          { "label": "X @yarnb_sayhi", "href": "https://x.com/yarnb_sayhi" },
+          { "label": "github.com/yarnovo", "href": "https://github.com/yarnovo" }
+        ]
+      }
+    ],
+    "legalLeft": "AGENTAILY · 「聊天 × 万物」",
+    "company": "© 2026 阿空智能",
+    "icp": "浙ICP备2026022274号-1",
+    "icpHref": "https://beian.miit.gov.cn/"
+  }
 }

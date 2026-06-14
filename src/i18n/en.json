@@ -1,5 +1,166 @@
 {
-  "brand": "Agentaily Form",
-  "tagline": "Conversational forms, designed by an agent.",
-  "wip": "Website under construction"
+  "meta": {
+    "title": "Agentaily · Chat × Everything"
+  },
+  "nav": {
+    "links": [
+      { "label": "Author", "href": "#about" },
+      { "label": "Works", "href": "#works" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "switchLang": "中文",
+    "toggleTheme": "Toggle theme"
+  },
+  "hero": {
+    "badge": "Chat × Everything",
+    "prefix": "Chat to",
+    "phrases": ["build forms", "design tools", "ship apps", "make anything"],
+    "sub": "If you can chat, have taste, and know what you need — you can get anything.",
+    "ctaPrimary": "Let's talk",
+    "ctaSecondary": "See work"
+  },
+  "demo": {
+    "live": "LIVE",
+    "previewLabel": "Generated artifact preview",
+    "model": "DeepSeek",
+    "items": [
+      {
+        "key": "form",
+        "q": "Make an event signup form",
+        "steps": ["Detected: signup", "Fields: name / phone", "Session→radio, note→optional"],
+        "line": "Done — your signup form is ready. Tap any field to edit.",
+        "ph": "e.g. 'make phone required'…"
+      },
+      {
+        "key": "dash",
+        "q": "Build an ops dashboard",
+        "steps": ["Pick the metrics", "Charts: trend + KPIs", "Layout set · live refresh"],
+        "line": "Dashboard's ready — swap metrics and charts anytime.",
+        "ph": "e.g. 'add conversion rate'…"
+      },
+      {
+        "key": "flow",
+        "q": "Set up a leave approval flow",
+        "steps": ["Map the steps", "Request → manager → HR", "Add approve / reject branches"],
+        "line": "Flow's wired up — reorder steps however you like.",
+        "ph": "e.g. 'add a director step'…"
+      },
+      {
+        "key": "survey",
+        "q": "Generate a satisfaction survey",
+        "steps": ["Clarify the goal", "Types: choice + rating", "Add logic jumps · anonymous"],
+        "line": "Survey's generated — add or edit questions freely.",
+        "ph": "e.g. 'add an open question'…"
+      }
+    ]
+  },
+  "about": {
+    "name": "yarnb",
+    "role": "AI app full-stack engineer",
+    "bio": "Author of agentaily — Chat × Everything.",
+    "avatarLabel": "Avatar",
+    "nameLabel": "Name",
+    "bioLabel": "Bio",
+    "facts": [
+      { "k": "Sign", "v": "Aquarius" },
+      { "k": "Favorite dish", "v": "Braised beef" },
+      { "k": "Experience", "v": "11 yrs frontend · multi-platform" },
+      { "k": "Focus", "v": "AI apps · Agents" },
+      { "k": "Stack", "v": "React · RN · Next.js · TS · Node.js · Python" },
+      { "k": "Role", "v": "AI app full-stack engineer" },
+      { "k": "Open source", "v": "github.com/yarnovo", "href": "https://github.com/yarnovo" },
+      { "k": "Email", "v": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" }
+    ]
+  },
+  "works": {
+    "label": "Works",
+    "title": "Recent work",
+    "subtitle": "Each one solves a real problem in a real scenario.",
+    "items": [
+      {
+        "status": "ok",
+        "statusLabel": "Live",
+        "featured": true,
+        "name": "Form Design",
+        "zh": "Chat-generated online forms",
+        "desc": "Say a sentence, get an online form that collects data. Edit fields by chatting; share a link or QR to fill; responses auto-aggregate.",
+        "href": "https://form-design.agentaily.com/",
+        "link": "form-design.agentaily.com"
+      },
+      {
+        "status": "soon",
+        "statusLabel": "In the works",
+        "name": "Next up",
+        "zh": "More Chat × Everything",
+        "desc": "Same approach, a different thing. Still polishing — forms first. Curious? Stay tuned.",
+        "href": null,
+        "link": "Coming soon"
+      },
+      {
+        "status": "custom",
+        "statusLabel": "Custom",
+        "name": "Your idea",
+        "zh": "Want a chat-driven tool?",
+        "desc": "Already have something in mind? Tell me what you need and I'll build it. Starts with one sentence.",
+        "href": "mailto:yarnb@foxmail.com",
+        "link": "Tell me your idea"
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently asked",
+    "items": [
+      {
+        "id": "q1",
+        "title": "What kind of projects do you take?",
+        "content": "Chat-driven small tools, agents, and internal workflow tools fit best — the kind you can describe in a sentence and operate by conversation. I can't take on huge systems solo, but I can help you think through whether and how to build."
+      },
+      {
+        "id": "q2",
+        "title": "How do you charge?",
+        "content": "Depends on scope. Small tools might be a friend price or done on the side; serious custom work is quoted per project. Model calls usually go through BYOK (your own key), so that cost never passes through me."
+      },
+      {
+        "id": "q3",
+        "title": "How long does it take?",
+        "content": "I work solo — good things take time. Simple ones: a few days; complex ones are scheduled by plan. I'd rather give an honest timeline than promise one I can't meet."
+      },
+      {
+        "id": "q4",
+        "title": "I just have an idea, not fully thought out — can I still reach out?",
+        "content": "Of course. Talking a fuzzy idea into clarity is the first step anyway. Even if the conclusion is 'not worth building,' that saved you time."
+      },
+      {
+        "id": "q5",
+        "title": "What's next for Chat × Everything?",
+        "content": "Forms are the first stop. Next I'll make more small things the same way. What exactly? A little secret — finish one, then talk about the next."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Chat, change the world.",
+    "cols": [
+      {
+        "head": "Works",
+        "links": [
+          { "label": "Form Design · Live", "href": "https://form-design.agentaily.com/" },
+          { "label": "More · In the works", "href": null }
+        ]
+      },
+      {
+        "head": "Contact",
+        "links": [
+          { "label": "yarnb@foxmail.com", "href": "mailto:yarnb@foxmail.com" },
+          { "label": "WeChat ybkeepgoing", "href": null },
+          { "label": "X @yarnb_sayhi", "href": "https://x.com/yarnb_sayhi" },
+          { "label": "github.com/yarnovo", "href": "https://github.com/yarnovo" }
+        ]
+      }
+    ],
+    "legalLeft": "AGENTAILY · 「Chat × Everything」",
+    "company": "© 2026 Akong Tech",
+    "icp": "浙ICP备2026022274号-1",
+    "icpHref": "https://beian.miit.gov.cn/"
+  }
 }
