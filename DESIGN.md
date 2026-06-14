@@ -7,8 +7,8 @@
 
 ## 设计在哪做(来源)
 
-- **Claude Design 项目**:**官网设计项目的 projectId 待补 —— 问用户**(fleet 落地前需要这个才能开新对话设计页面)。
-- **首个 handoff 引用** = `Gop7LedEF_n8rMHzWaDZ-w`(落地页设计稿)—— 第一个 fleet worker 据此 `design-sync` 落地落地页。
+- **Claude Design 项目**:projectId = `1c110e32-5467-4978-883e-36ae10f3bd1c`(在 claude.ai/design 这个项目里开新对话设计 / 改页面)。
+- **最新 handoff 引用** = `y7W2EGsfsjhDNPg2OAXnBQ`(落地页设计稿,含 chat5 页脚 + 代码清理;**取代**旧的 `Gop7LedEF_n8rMHzWaDZ-w`)—— 第一个 fleet worker 据此 `design-sync` 落地落地页。
 - 流程:在 claude.ai/design 对应项目里设计页面 → 复制 handoff 链接 → `design-sync` 三路合并进代码。取法 / 合并细节见 `design-via-claude-design` + `design-sync` skill。**别和上游组件库 (`@agentaily/design-system`) 的设计项目搞混**(那个是设计组件本身的;本仓只有缺组件 / 缺 seam 时才往那反馈,**叫人**)。
 
 ## 设计原则 / 交互
@@ -29,7 +29,7 @@
 
 ## 页面 / 界面清单(+ 设计状态)
 
-落地页是**单页滚动**,下面按区块拆。当前全仓只有占位壳(`src/App.tsx`),区块均**待设计 / 待实现**(fleet worker 从 handoff `Gop7LedEF_n8rMHzWaDZ-w` 落地)。
+落地页是**单页滚动**,下面按区块拆。当前全仓只有占位壳(`src/App.tsx`),区块均**待设计 / 待实现**(fleet worker 从最新 handoff `y7W2EGsfsjhDNPg2OAXnBQ` 落地)。
 
 | 区块                                      | 设计状态           | 对应代码                                   |
 | ----------------------------------------- | ------------------ | ------------------------------------------ |
