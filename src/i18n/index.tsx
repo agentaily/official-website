@@ -71,7 +71,6 @@ export interface Messages {
   footer: {
     tagline: string;
     cols: FooterCol[];
-    legalLeft: string;
     company: string;
     /** ICP filing number — a Chinese legal identifier, kept verbatim in both locales. */
     icp: string;
