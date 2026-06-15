@@ -11,13 +11,12 @@ Project subagents for **Agentaily 官网 (official-website)**. Each has a single
 | `outer-tester`   | @amiceli/vitest-cucumber + Testing Library · `tests/integration/` (realize features; no e2e layer yet)                | product code                  |
 | `reviewer`       | independent adversarial review (read-only)                                                                            | editing code                  |
 | `release-eng`    | GitHub Actions (CI) + Cloudflare Pages(merge main 即部署)+ lefthook + Prettier                                        | product code, features, tests |
-| `pr-analyst`     | triage an incoming PR → classify / decompose / route (read-only)                                                      | implementing, merging         |
 | `designer` [UI]  | `DESIGN.md` (visual truth source) + design pages in Claude Design → design-sync into code                             | product logic, tests          |
 
 ## Flow (double-loop TDD + PR-driven)
 
 ```
-PR (task ticket) ─► pr-analyst ─► classify + route ───────────────┐
+PR (task ticket) ─► worker self-triage ─► classify + route ───────┐
 intent / handoff ─► spec-architect ─► `features/` + contracts ─┤
         designer [UI] ─► design-sync'd UI ────────────────────────┤
                                                                    ▼
