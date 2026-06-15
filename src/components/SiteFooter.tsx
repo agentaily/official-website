@@ -1,10 +1,10 @@
 import { BrandMark } from "@agentaily/design-system";
 import { useMessages } from "../i18n";
 
-// 页脚 / Footer (chat5 final state) — a centered container (not full-bleed):
-// brand + tagline, link columns, then a legal row. Left: brand slogan. Right:
-// company + ICP filing. The ICP number is a Chinese legal identifier (kept
-// verbatim in both locales) and links to the MIIT registry.
+// 页脚 / Footer — a centered container (not full-bleed): brand + tagline, link
+// columns, then a centered legal row showing company + ICP filing. The ICP
+// number is a Chinese legal identifier (kept verbatim in both locales) and
+// links to the MIIT registry.
 export function SiteFooter() {
   const { footer } = useMessages();
   return (
@@ -69,13 +69,11 @@ export function SiteFooter() {
             flexWrap: "wrap",
             gap: 16,
             alignItems: "center",
+            justifyContent: "center",
             paddingTop: 24,
             borderTop: "1px solid var(--border-default)",
           }}
         >
-          <span className="aw-foot__legal" style={{ flex: 1 }}>
-            {footer.legalLeft}
-          </span>
           <span
             className="aw-foot__links"
             style={{ flex: "0 0 auto", gap: "6px 14px", alignItems: "center" }}
