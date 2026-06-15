@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createI18n } from "@agentaily/web-kit";
 import en from "./en.json";
 import zh from "./zh.json";
 
@@ -7,6 +7,10 @@ import zh from "./zh.json";
 // useMessages(). The explicit `Messages` interface below is the single shape both
 // catalogs are checked against — a missing/typo'd/extra key is a compile error,
 // which keeps the two languages structurally in lock-step.
+//
+// The provider/hook *mechanism* (locale state, <html lang>, cross-subdomain
+// persistence, navigator detection) is owned by @agentaily/web-kit's createI18n;
+// this module only injects the typed catalogs and re-exports the bound hooks.
 
 export type Locale = "en" | "zh";
 export const LOCALES: Locale[] = ["en", "zh"];
@@ -78,48 +82,15 @@ export interface Messages {
   };
 }
 
+// Typed as Record<Locale, Messages> so both JSON catalogs are checked against the
+// single `Messages` shape (drift is a compile error) and useMessages() is bound to
+// Messages — every key access stays type-safe.
 const catalogs: Record<Locale, Messages> = { en, zh };
 
-interface LocaleContextValue {
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-  m: Messages;
-}
-
-const LocaleContext = createContext<LocaleContextValue | null>(null);
-
-export function LocaleProvider({
-  children,
-  initialLocale = "zh",
-}: {
-  children: ReactNode;
-  initialLocale?: Locale;
-}) {
-  const [locale, setLocale] = useState<Locale>(initialLocale);
-
-  // Keep <html lang> and the tab title in sync with the active locale so
-  // assistive tech, the browser, and the tab all follow the language.
-  // (Document-level side effect; harmless in non-DOM test envs.)
-  useEffect(() => {
-    document.documentElement.setAttribute("lang", locale === "en" ? "en" : "zh");
-    document.title = catalogs[locale].meta.title;
-  }, [locale]);
-
-  const value = useMemo<LocaleContextValue>(
-    () => ({ locale, setLocale, m: catalogs[locale] }),
-    [locale],
-  );
-
-  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
-}
-
-export function useLocale(): LocaleContextValue {
-  const ctx = useContext(LocaleContext);
-  if (!ctx) throw new Error("useLocale must be used within a <LocaleProvider>");
-  return ctx;
-}
-
-/** The message catalog for the active locale: `const m = useMessages()`. */
-export function useMessages(): Messages {
-  return useLocale().m;
-}
+// Chinese is the default/fallback locale (`defaultLocale: "zh"`); web-kit first
+// honours a persisted choice, then the visitor's navigator language, then this
+// fallback. Locale changes apply `<html lang>` and re-render in place (no reload).
+export const { LocaleProvider, useLocale, useMessages } = createI18n({
+  catalogs,
+  defaultLocale: "zh",
+});
