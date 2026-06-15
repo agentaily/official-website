@@ -1,14 +1,17 @@
 import { BrandMark, Icon } from "@agentaily/design-system";
-import { useLocale } from "../i18n";
-import type { Theme } from "../lib/useTheme";
+import { useTheme } from "@agentaily/web-kit";
+import { useLocale, useMessages } from "../i18n";
 
 /**
  * Sticky top nav: brand mark + anchor links + language toggle + theme toggle.
  * The language button shows the *target* locale code (EN while in zh, ZH while
- * in en) so a click always reads as "switch to that language".
+ * in en) so a click always reads as "switch to that language". Theme + locale
+ * both come from web-kit context, so the nav is self-contained (no props).
  */
-export function Nav({ theme, onToggleTheme }: { theme: Theme; onToggleTheme: () => void }) {
-  const { locale, setLocale, m } = useLocale();
+export function Nav() {
+  const { locale, setLocale } = useLocale();
+  const m = useMessages();
+  const { resolvedTheme, setTheme } = useTheme();
   const targetCode = locale === "en" ? "ZH" : "EN";
 
   return (
@@ -36,11 +39,11 @@ export function Nav({ theme, onToggleTheme }: { theme: Theme; onToggleTheme: () 
         <button
           type="button"
           className="aw-themebtn"
-          onClick={onToggleTheme}
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           aria-label={m.nav.toggleTheme}
           title={m.nav.toggleTheme}
         >
-          <Icon name={theme === "dark" ? "sun" : "moon"} size={16} />
+          <Icon name={resolvedTheme === "dark" ? "sun" : "moon"} size={16} />
         </button>
       </span>
     </nav>

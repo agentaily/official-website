@@ -31,15 +31,15 @@
 
 落地页是**单页滚动**,从最新 handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)落地。**活动渲染树**:Nav → Hero → 作品 → FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是**死组件,不实现**。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
 
-| 区块                                        | 设计状态  | 对应代码                                              |
-| ------------------------------------------- | --------- | ----------------------------------------------------- |
-| **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                              |
-| **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx` |
-| **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                              |
-| **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                |
-| **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                       |
-| 语言切换 (en/zh) + 深/浅主题                | ✅ 已实现 | `src/i18n/` + `src/lib/useTheme.ts`(Nav 触发)         |
-| 滚动入场动画(`.aw-rise` → `.is-in`)         | ✅ 已实现 | `src/lib/useReveal.ts`(基态可见、入视口才播)          |
+| 区块                                        | 设计状态  | 对应代码                                                                                                             |
+| ------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                                                                                             |
+| **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx`                                                                |
+| **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                                                                                             |
+| **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                                                                               |
+| **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                                                                                      |
+| 语言切换 (en/zh) + 深/浅主题                | ✅ 已实现 | `src/i18n/`(`createI18n` 工厂)+ `@agentaily/web-kit` `ThemeProvider`(Nav 触发);跨子域持久化 + `themeInitScript` 防闪 |
+| 滚动入场动画(`.aw-rise` → `.is-in`)         | ✅ 已实现 | `src/lib/useReveal.ts`(基态可见、入视口才播)                                                                         |
 
 ## 设计 ↔ 代码映射
 

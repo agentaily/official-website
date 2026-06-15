@@ -1,5 +1,27 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { themeInitScript } from "@agentaily/web-kit";
+
+// Inject web-kit's FOUC guard at the very start of <head>: a tiny blocking
+// script that reads the persisted theme (cookie → localStorage), resolves
+// `system` via prefers-color-scheme, and sets `data-theme` on <html> *before*
+// first paint. Sourced from web-kit so it never drifts from the runtime.
+// `defaultTheme` must match the <ThemeProvider> (dark); the storage key stays at
+// web-kit's default (`agentaily:theme`) on both sides, so no keyPrefix override.
+function themeInit() {
+  return {
+    name: "agentaily-theme-init",
+    transformIndexHtml() {
+      return [
+        {
+          tag: "script",
+          injectTo: "head-prepend",
+          children: themeInitScript({ defaultTheme: "dark" }),
+        },
+      ];
+    },
+  };
+}
 
 // Base path depends on the deploy target:
 //   - Cloudflare Pages (the production host, root domain) builds with base "/",
@@ -9,5 +31,5 @@ import react from "@vitejs/plugin-react";
 // DEPLOY_BASE later without touching code.
 export default defineConfig(({ command }) => ({
   base: command === "build" ? (process.env.DEPLOY_BASE ?? "/") : "/",
-  plugins: [react()],
+  plugins: [react(), themeInit()],
 }));
