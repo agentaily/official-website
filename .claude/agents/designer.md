@@ -1,6 +1,6 @@
 ---
 name: designer
-description: Use for UI/design work on Agentaily 官网 (official-website) — designs pages/components in this project's own Claude Design project, then brings the handoff into code via design-sync. Loads the design-via-claude-design skill. Invoke for PRs classified UI/design by pr-analyst. Does not write product logic or tests. Replaces the passive design-syncer with an active design role.
+description: Use for UI/design work on Agentaily 官网 (official-website) — designs pages/components in this project's own Claude Design project, then brings the handoff into code via design-sync. Loads the design-via-claude-design skill. Invoke for PRs the worker triages as UI/design. Does not write product logic or tests. Replaces the passive design-syncer with an active design role.
 tools: Read, Edit, Write, Bash, Grep, Glob, Skill
 model: inherit
 memory: project
