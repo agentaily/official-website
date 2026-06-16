@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ThemeProvider } from "@agentaily/web-kit";
+import { ThemeProvider } from "@agentaily/design-system";
 import { LocaleProvider, useMessages } from "./i18n";
 import { Nav } from "./components/Nav";
 import { SiteFooter } from "./components/SiteFooter";
@@ -8,7 +8,7 @@ import { Hero } from "./sections/Hero";
 import { Works } from "./sections/Works";
 import { useReveal } from "./lib/useReveal";
 
-// Keep the browser tab title in sync with the active locale. web-kit's i18n
+// Keep the browser tab title in sync with the active locale. The DS runtime's i18n
 // applies <html lang> on locale change but leaves document.title to the product,
 // so we mirror the localized meta.title here (rendered inside LocaleProvider).
 function DocumentTitle() {
@@ -40,7 +40,7 @@ function Landing() {
 }
 
 export default function App() {
-  // web-kit owns theme (light/dark/system) state + cross-subdomain persistence.
+  // The DS runtime owns theme (light/dark/system) state + cross-subdomain persistence.
   // Dark stays the default (the brand ships dark); the FOUC guard injected in
   // vite.config mirrors this defaultTheme on <html> before first paint.
   return (

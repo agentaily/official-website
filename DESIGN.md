@@ -3,7 +3,7 @@
 这个产品**长什么样、怎么设计的**的真相源(视觉/交互维度)。和 `SPEC.md`(架构真相)、`features/`(行为真相)**三足鼎立** —— 它是**视觉契约**。
 
 > [UI] 仅**消费设计系统的 UI 项目**需要本文件;纯逻辑 / 后端 / CLI 项目没有。
-> **本产品的视觉系统(palette / type / 组件)在上游 `@agentaily/design-system` (^0.10.0) —— 本文件不重复那些**,只记**本产品自己的**设计指针 + 决策。`designer` agent 读本文件当真相源(就像 `spec-architect` 读 features)。
+> **本产品的视觉系统(palette / type / 组件)在上游 `@agentaily/design-system` (^0.15.0) —— 本文件不重复那些**,只记**本产品自己的**设计指针 + 决策。`designer` agent 读本文件当真相源(就像 `spec-architect` 读 features)。
 
 ## 设计在哪做(来源)
 
@@ -23,7 +23,7 @@
 
 ## 消费的设计系统
 
-- **`@agentaily/design-system` (^0.10.0)**:**UI 一律消费,不手搓**;升级随上游流过来。
+- **`@agentaily/design-system` (^0.15.0)**:**UI 一律消费,不手搓**;升级随上游流过来。
 - 关键组件 / token:`BrandMark`(品牌标)· `Button` · `Card`(含 ticks 边角motif)· `Badge` —— 落地页区块按设计从 DS 取(Hero/功能卡/CTA);视觉系统(palette/type)全部来自 DS,本仓不重定义。
 - 缺组件 / 缺 seam → 往**上游组件库**反馈补齐(下游定契约、上游照做;这步**叫人**)。
 
@@ -31,15 +31,15 @@
 
 落地页是**单页滚动**,从最新 handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)落地。**活动渲染树**:Nav → Hero → 作品 → FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是**死组件,不实现**。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
 
-| 区块                                        | 设计状态  | 对应代码                                                                                                             |
-| ------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                                                                                             |
-| **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx`                                                                |
-| **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                                                                                             |
-| **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                                                                               |
-| **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                                                                                      |
-| 语言切换 (en/zh) + 深/浅主题                | ✅ 已实现 | `src/i18n/`(`createI18n` 工厂)+ `@agentaily/web-kit` `ThemeProvider`(Nav 触发);跨子域持久化 + `themeInitScript` 防闪 |
-| 滚动入场动画(`.aw-rise` → `.is-in`)         | ✅ 已实现 | `src/lib/useReveal.ts`(基态可见、入视口才播)                                                                         |
+| 区块                                        | 设计状态  | 对应代码                                                                                                                   |
+| ------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                                                                                                   |
+| **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx`                                                                      |
+| **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                                                                                                   |
+| **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                                                                                     |
+| **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                                                                                            |
+| 语言切换 (en/zh) + 深/浅主题                | ✅ 已实现 | `src/i18n/`(`createI18n` 工厂)+ `@agentaily/design-system` `ThemeProvider`(Nav 触发);跨子域持久化 + `themeInitScript` 防闪 |
+| 滚动入场动画(`.aw-rise` → `.is-in`)         | ✅ 已实现 | `src/lib/useReveal.ts`(基态可见、入视口才播)                                                                               |
 
 ## 设计 ↔ 代码映射
 
