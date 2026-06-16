@@ -7,7 +7,7 @@
 ## 怎么跑
 
 ```bash
-npm install          # 拉依赖(含 DS 0.10.0)+ 装 lefthook git hooks
+npm install          # 拉依赖(含 DS 0.15.0)+ 装 lefthook git hooks
 npm run dev          # Vite dev server (5173)
 npm run typecheck    # tsc --noEmit(src/ strict TS)
 npm test             # 单元 + BDD(vitest, jsdom)

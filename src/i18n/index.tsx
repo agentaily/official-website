@@ -1,4 +1,4 @@
-import { createI18n } from "@agentaily/web-kit";
+import { createI18n } from "@agentaily/design-system";
 import en from "./en.json";
 import zh from "./zh.json";
 
@@ -9,7 +9,7 @@ import zh from "./zh.json";
 // which keeps the two languages structurally in lock-step.
 //
 // The provider/hook *mechanism* (locale state, <html lang>, cross-subdomain
-// persistence, navigator detection) is owned by @agentaily/web-kit's createI18n;
+// persistence, navigator detection) is owned by @agentaily/design-system's createI18n;
 // this module only injects the typed catalogs and re-exports the bound hooks.
 
 export type Locale = "en" | "zh";
@@ -87,7 +87,7 @@ export interface Messages {
 // Messages — every key access stays type-safe.
 const catalogs: Record<Locale, Messages> = { en, zh };
 
-// Chinese is the default/fallback locale (`defaultLocale: "zh"`); web-kit first
+// Chinese is the default/fallback locale (`defaultLocale: "zh"`); the DS runtime first
 // honours a persisted choice, then the visitor's navigator language, then this
 // fallback. Locale changes apply `<html lang>` and re-render in place (no reload).
 export const { LocaleProvider, useLocale, useMessages } = createI18n({

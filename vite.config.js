@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { themeInitScript } from "@agentaily/web-kit";
+import { themeInitScript } from "@agentaily/design-system";
 
-// Inject web-kit's FOUC guard at the very start of <head>: a tiny blocking
+// Inject the DS runtime's FOUC guard at the very start of <head>: a tiny blocking
 // script that reads the persisted theme (cookie → localStorage), resolves
 // `system` via prefers-color-scheme, and sets `data-theme` on <html> *before*
-// first paint. Sourced from web-kit so it never drifts from the runtime.
+// first paint. Sourced from the design-system runtime so it never drifts from it.
 // `defaultTheme` must match the <ThemeProvider> (dark); the storage key stays at
-// web-kit's default (`agentaily:theme`) on both sides, so no keyPrefix override.
+// the runtime's default (`agentaily:theme`) on both sides, so no keyPrefix override.
 function themeInit() {
   return {
     name: "agentaily-theme-init",

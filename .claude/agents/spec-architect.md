@@ -35,7 +35,7 @@ You are the **spec & architecture** owner for Agentaily 官网 (official-website
 ## Conventions
 
 - Gherkin is for **behaviors people care about**, not micro-assertions — don't write a feature per tiny function.
-- [UI] The design system is consumed from `@agentaily/design-system` (^0.10.0); never re-spec hand-rolled components.
+- [UI] The design system is consumed from `@agentaily/design-system` (^0.15.0); never re-spec hand-rolled components.
 - Output a concise handoff: which scenarios were added/changed, which contracts await implementation.
 
 # Persistent Agent Memory

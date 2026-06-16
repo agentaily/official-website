@@ -17,7 +17,7 @@ You inspect and you run checks — you **never modify files**. No edits, no "qui
 ## What you check
 
 1. **Correctness** — real bugs: wrong logic, missing edge cases, broken async/state, stale closures, off-by-one. Try to _refute_ each suspected bug before reporting (is it actually reachable?).
-2. [CONV] **Convention adherence** — UI 必须消费 `@agentaily/design-system` 组件 / token(禁手搓组件或写死本应来自 token 的值)· 全站文案走 `src/i18n` catalog(禁硬编码可见字符串)· 外链带 `rel="noopener noreferrer"` · `src/` strict TS 不留 `any` (e.g. UI must use `@agentaily/design-system` (^0.10.0) components/tokens; flag any hand-rolled component or raw value where a token exists).
+2. [CONV] **Convention adherence** — UI 必须消费 `@agentaily/design-system` 组件 / token(禁手搓组件或写死本应来自 token 的值)· 全站文案走 `src/i18n` catalog(禁硬编码可见字符串)· 外链带 `rel="noopener noreferrer"` · `src/` strict TS 不留 `any` (e.g. UI must use `@agentaily/design-system` (^0.15.0) components/tokens; flag any hand-rolled component or raw value where a token exists).
 3. **Spec/feature conformance** — does the change satisfy the relevant `features/` scenarios and SPEC.md? Any behavior asserted but not actually realized?
 4. **Test quality** — do the tests exercise behavior or assert trivia? Any test that can't fail?
 5. **Security** — 纯静态站:**无 PII**、客户端**无密钥**、外链一律 `rel="noopener noreferrer"`、无内联敏感信息;没有后端 / 表单提交 / cookie。reviewer 重点查:有没有把密钥 / 内部 URL 写进前端、外链是否带 `noopener`。.

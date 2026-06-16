@@ -1,12 +1,12 @@
 import { BrandMark, Icon } from "@agentaily/design-system";
-import { useTheme } from "@agentaily/web-kit";
+import { useTheme } from "@agentaily/design-system";
 import { useLocale, useMessages } from "../i18n";
 
 /**
  * Sticky top nav: brand mark + anchor links + language toggle + theme toggle.
  * The language button shows the *target* locale code (EN while in zh, ZH while
  * in en) so a click always reads as "switch to that language". Theme + locale
- * both come from web-kit context, so the nav is self-contained (no props).
+ * both come from the DS runtime context, so the nav is self-contained (no props).
  */
 export function Nav() {
   const { locale, setLocale } = useLocale();
