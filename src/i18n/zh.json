@@ -8,15 +8,16 @@
       { "label": "FAQ", "href": "#faq" }
     ],
     "switchLang": "English",
-    "toggleTheme": "切换主题"
+    "toggleTheme": "切换主题",
+    "openApp": "进入应用"
   },
   "hero": {
     "badge": "聊天 × 万物",
     "prefix": "聊天，",
     "phrases": ["生成应用", "搭建工具", "设计页面", "造出万物"],
     "sub": "跟 AI 聊一句，它就帮你造出一个能用的应用——前端界面、后端逻辑，沙箱里当场跑起来。一键发布到市场，任何人都能浏览、fork，再造一个自己的。",
-    "ctaPrimary": "看看能造什么",
-    "ctaSecondary": "聊聊想法"
+    "ctaPrimary": "开始造",
+    "ctaSecondary": "看看能造什么"
   },
   "demo": {
     "live": "LIVE",

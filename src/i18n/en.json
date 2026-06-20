@@ -8,15 +8,16 @@
       { "label": "FAQ", "href": "#faq" }
     ],
     "switchLang": "中文",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "openApp": "Open app"
   },
   "hero": {
     "badge": "Chat × Everything",
     "prefix": "Chat to",
     "phrases": ["build an app", "make a tool", "design a page", "create anything"],
     "sub": "Chat one line and it builds you a working app — front-end UI and back-end logic, running live in a sandbox. Publish to the market in one click; anyone can browse, fork, and make their own.",
-    "ctaPrimary": "See what it builds",
-    "ctaSecondary": "Share an idea"
+    "ctaPrimary": "Build now",
+    "ctaSecondary": "See what you can build"
   },
   "demo": {
     "live": "LIVE",

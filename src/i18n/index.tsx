@@ -60,7 +60,7 @@ export interface FooterCol {
 
 export interface Messages {
   meta: { title: string };
-  nav: { links: NavLink[]; switchLang: string; toggleTheme: string };
+  nav: { links: NavLink[]; switchLang: string; toggleTheme: string; openApp: string };
   hero: {
     badge: string;
     prefix: string;

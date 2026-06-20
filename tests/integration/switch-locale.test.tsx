@@ -11,13 +11,13 @@ import App from "../../src/App";
 const feature = await loadFeature("features/switch-locale.feature");
 
 function expectChinese() {
+  expect(screen.getByText("开始造")).toBeInTheDocument();
   expect(screen.getByText("看看能造什么")).toBeInTheDocument();
-  expect(screen.getByText("聊聊想法")).toBeInTheDocument();
 }
 
 function expectEnglish() {
-  expect(screen.getByText("See what it builds")).toBeInTheDocument();
-  expect(screen.getByText("Share an idea")).toBeInTheDocument();
+  expect(screen.getByText("Build now")).toBeInTheDocument();
+  expect(screen.getByText("See what you can build")).toBeInTheDocument();
 }
 
 function switchLanguage(targetCode: "EN" | "ZH") {

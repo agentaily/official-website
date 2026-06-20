@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 import { useMessages } from "../i18n";
 import { GenCanvas, Typewriter } from "./heroDemo";
 
-// Where the secondary "share an idea" CTA points. Not user-visible copy (it's an
-// action target); the address itself also appears as catalog text in Works / Footer.
-const CONTACT_MAILTO = "mailto:yarnb@foxmail.com";
+// The primary CTA goes straight to the platform (the actual build workbench) —
+// the unmissable "go make something" entry. Not user-visible copy (an action target).
+const PLATFORM_URL = "https://agentaily.pages.dev/build";
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
@@ -59,16 +59,16 @@ export function Hero() {
         </h1>
         <p className="aw-hero__sub">{hero.sub}</p>
         <div className="aw-hero__ctas">
-          <Button variant="primary" size="lg" onClick={() => scrollToId("works")}>
-            {hero.ctaPrimary}
-          </Button>
           <Button
-            variant="secondary"
+            variant="primary"
             size="lg"
             onClick={() => {
-              window.location.href = CONTACT_MAILTO;
+              window.location.href = PLATFORM_URL;
             }}
           >
+            {hero.ctaPrimary}
+          </Button>
+          <Button variant="secondary" size="lg" onClick={() => scrollToId("works")}>
             {hero.ctaSecondary}
           </Button>
         </div>

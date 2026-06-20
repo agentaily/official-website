@@ -1,4 +1,4 @@
-import { BrandMark, Icon } from "@agentaily/design-system";
+import { BrandMark, Button, Icon } from "@agentaily/design-system";
 import { useTheme } from "@agentaily/design-system";
 import { useLocale, useMessages } from "../i18n";
 
@@ -27,6 +27,15 @@ export function Nav() {
         ))}
       </span>
       <span className="aw-nav__right">
+        <Button
+          variant="primary"
+          size="sm"
+          onClick={() => {
+            window.location.href = "https://agentaily.pages.dev/build";
+          }}
+        >
+          {m.nav.openApp}
+        </Button>
         <button
           type="button"
           className="aw-themebtn aw-langbtn"
