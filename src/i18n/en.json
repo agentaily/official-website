@@ -60,26 +60,26 @@
     "items": [
       {
         "status": "ok",
-        "statusLabel": "Live",
+        "statusLabel": "Open now",
         "featured": true,
-        "name": "Form Design",
-        "zh": "Chat-generated online forms",
-        "desc": "The first app built with Agentaily: say a sentence, get an online form that collects data. Edit fields by chatting; share a link or QR to fill; responses auto-aggregate.",
-        "href": "https://form-design.agentaily.com/",
-        "link": "form-design.agentaily.com"
+        "name": "Build your own",
+        "zh": "Chat one line, get an app",
+        "desc": "The market's first apps are still being polished — but the platform is already usable. Chat one line and build a working app on the spot; publish it to the market, where anyone can fork and remix.",
+        "href": "https://agentaily.pages.dev/build",
+        "link": "Start building"
       },
       {
         "status": "soon",
-        "statusLabel": "In the works",
-        "name": "More apps",
+        "statusLabel": "Coming soon",
+        "name": "First apps",
         "zh": "The market is growing",
-        "desc": "Same platform, far beyond forms — pages, tools, and mini-apps will keep landing in the market. Polishing the first one first.",
+        "desc": "Forms, pages, dashboards, small tools… the same platform builds far more than one kind. The first apps are in the works and landing soon.",
         "href": null,
-        "link": "Coming soon"
+        "link": "Stay tuned"
       },
       {
         "status": "custom",
-        "statusLabel": "Build your own",
+        "statusLabel": "Co-create",
         "name": "Your idea",
         "zh": "Got an idea? Chat it out.",
         "desc": "Already have something in mind? Say it, and let the platform build it — starts with one sentence. Publish it, fork it, it's yours.",
@@ -115,7 +115,7 @@
       {
         "id": "q5",
         "title": "Is it usable today?",
-        "content": "The first app, Form Design, is already live and usable; the platform and market are still being polished. Want early access, or to build along? Let's talk."
+        "content": "The platform is already usable — chat one line and build an app right now; the market and its first apps are still being polished. Want early access, or to build along? Let's talk."
       }
     ]
   },
@@ -125,8 +125,8 @@
       {
         "head": "Market",
         "links": [
-          { "label": "Form Design · Live", "href": "https://form-design.agentaily.com/" },
-          { "label": "More · In the works", "href": null }
+          { "label": "Start building", "href": "https://agentaily.pages.dev/build" },
+          { "label": "More apps · In the works", "href": null }
         ]
       },
       {

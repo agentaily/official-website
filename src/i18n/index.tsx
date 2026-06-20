@@ -90,7 +90,11 @@ const catalogs: Record<Locale, Messages> = { en, zh };
 // Chinese is the default/fallback locale (`defaultLocale: "zh"`); the DS runtime first
 // honours a persisted choice, then the visitor's navigator language, then this
 // fallback. Locale changes apply `<html lang>` and re-render in place (no reload).
+// Persistence is pinned to a cookie (backend "cookie") to match the theme store and
+// survive refresh; `<html lang="zh">` is preset in index.html to minimise the
+// first-paint flash (a pure-CSR site can't fully eliminate locale FOUC for text).
 export const { LocaleProvider, useLocale, useMessages } = createI18n({
   catalogs,
   defaultLocale: "zh",
+  storage: { backend: "cookie" },
 });

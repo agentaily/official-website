@@ -14,7 +14,7 @@ Agentaily 的**官方落地页**:介绍 Agentaily 这个**「聊天 × 万物」
 | --- | --- | --- |
 | **Nav** | BrandMark + 锚点导航(作品 / FAQ)+ 语言(en/zh)/ 深浅主题切换,sticky | ✅ 已实现 |
 | **Hero** | 平台价值主张(RotatingTagline:聊天造万物 + 市场 + fork)+ 主 CTA(看市场 / 聊想法)+ 抽象「聊天 × 万物」demo | ✅ 已实现 |
-| **市场抢先看 (Works)** | 三张应用卡(已上线 Form Design / 筹备中 / 造你自己的),呈现市场 + fork 叙事,外链带 `rel="noopener noreferrer"` | ✅ 已实现 |
+| **市场抢先看 (Works)** | 三张**不绑具体产品**的卡(造你自己的 → CTA 指向聊天造 app `agentaily.pages.dev/build` / 第一批应用即将上架 / 你的点子),呈现市场 + fork 叙事,外链带 `rel="noopener noreferrer"`。**不展示任何单个产品**(避免拿单点当门面 / 链到会下线的域) | ✅ 已实现 |
 | **FAQ** | 合作向 Accordion(接什么项目 / 怎么收费 / 工期…),首项默认展开 | ✅ 已实现 |
 | **页脚 (Footer)** | 品牌 + 标语 + 链接列 + 版权 + ICP 备案(链工信部);居中容器 | ✅ 已实现 |
 
@@ -22,13 +22,13 @@ Agentaily 的**官方落地页**:介绍 Agentaily 这个**「聊天 × 万物」
 
 ## 横切关注
 
-- **i18n (en/zh)**:全站文案走 `src/i18n/` 的 message catalog(`en.json` / `zh.json`),经 `useMessages()` 读取;两份 catalog 由 `Messages` 接口锁同一形状(漂移即编译错)。locale 默认中文,Nav 里可切;切换同步 `<html lang>`。
-- **主题**:默认深色(`<html data-theme="dark">`),Nav 里可切深 / 浅并持久化;视觉系统全部来自上游 DS,本仓不重定义 palette/type。
+- **i18n (en/zh)**:全站文案走 `src/i18n/` 的 message catalog(`en.json` / `zh.json`),经 `useMessages()` 读取;两份 catalog 由 `Messages` 接口锁同一形状(漂移即编译错)。locale 默认中文,Nav 里可切;切换同步 `<html lang>`。**持久化用 cookie**(`createI18n({ storage: { backend: "cookie" } })`),刷新保持;`index.html` 预设 `<html lang="zh">` 把首屏闪降到最小(纯 CSR 文本无法完全零闪)。
+- **主题**:默认深色,Nav 里可切深 / 浅。**持久化用 cookie**(`ThemeProvider storage={{ backend: "cookie" }}`,key `agentaily:theme`);`vite.config` 把 DS 的 `themeInitScript`(cookie 优先)注入 `<head>`,首屏前读 cookie 设 `data-theme` → **刷新零闪(FOUC guard)**。两侧同一 store,*.agentaily.com 跨子域、localhost/preview 自动降级 host-only cookie。视觉系统全部来自上游 DS,本仓不重定义 palette/type。
 - **响应式**:移动优先;断点 760 / 900px(见 `landing.css`)。
 - **安全**:纯静态站,无 PII、客户端无密钥、外链一律 `rel="noopener noreferrer"`、无内联敏感信息。
 
 ## 非目标
 
-- ❌ 后端 / Workers / D1 / 表单提交(那是 `form-design` 产品本身的事)。
+- ❌ 后端 / Workers / D1 / 表单提交(那是被平台造出来的应用本身的事,不是官网的事)。
 - ❌ npm 发版(这是部署的站)。
 - ❌ 手搓 UI 组件(一律消费 `@agentaily/design-system`)。

@@ -60,26 +60,26 @@
     "items": [
       {
         "status": "ok",
-        "statusLabel": "已上线",
+        "statusLabel": "现已开放",
         "featured": true,
-        "name": "Form Design",
-        "zh": "聊天生成在线表单",
-        "desc": "用 Agentaily 造的第一个应用：说一句话，得到一张能收数据的在线表单。聊着改字段，发链接、扫码即填，回复自动汇总。",
-        "href": "https://form-design.agentaily.com/",
-        "link": "form-design.agentaily.com"
+        "name": "造一个你自己的",
+        "zh": "聊一句，造个应用",
+        "desc": "市场的第一批应用还在打磨——但平台已经能用了。跟 AI 聊一句，当场造出一个能跑的应用，发布到市场，任何人都能 fork 再造。",
+        "href": "https://agentaily.pages.dev/build",
+        "link": "去造一个"
       },
       {
         "status": "soon",
-        "statusLabel": "筹备中",
-        "name": "更多应用",
+        "statusLabel": "即将上架",
+        "name": "第一批应用",
         "zh": "市场在生长",
-        "desc": "同一套平台，能造的远不止表单——页面、工具、小应用会陆续上架市场。先把第一个打磨好。",
+        "desc": "表单、页面、看板、小工具……同一套平台能造的远不止一种。第一批应用正在打磨，很快和你见面。",
         "href": null,
         "link": "敬请期待"
       },
       {
         "status": "custom",
-        "statusLabel": "造你自己的",
+        "statusLabel": "共创",
         "name": "你的点子",
         "zh": "有想法？聊出来。",
         "desc": "心里已经有个想做的东西？把它说出来，让平台帮你造出来——从一句话开始，发布、fork，都归你。",
@@ -115,7 +115,7 @@
       {
         "id": "q5",
         "title": "现在能用了吗？",
-        "content": "第一个应用 Form Design 已经上线、能用；平台与市场还在持续打磨。想最早用上、或一起共创，欢迎聊。"
+        "content": "平台已经能用了——现在就能聊一句造出一个应用；市场和第一批上架应用还在持续打磨。想最早用上、或一起共创，欢迎聊。"
       }
     ]
   },
@@ -125,8 +125,8 @@
       {
         "head": "市场",
         "links": [
-          { "label": "Form Design · 已上线", "href": "https://form-design.agentaily.com/" },
-          { "label": "更多 · 筹备中", "href": null }
+          { "label": "去造一个", "href": "https://agentaily.pages.dev/build" },
+          { "label": "更多应用 · 筹备中", "href": null }
         ]
       },
       {
