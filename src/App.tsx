@@ -40,11 +40,15 @@ function Landing() {
 }
 
 export default function App() {
-  // The DS runtime owns theme (light/dark/system) state + cross-subdomain persistence.
-  // Dark stays the default (the brand ships dark); the FOUC guard injected in
-  // vite.config mirrors this defaultTheme on <html> before first paint.
+  // The DS runtime owns theme (light/dark/system) state + persistence. Dark stays
+  // the default (the brand ships dark). Persistence is pinned to a cookie (backend
+  // "cookie") so the choice survives refresh AND is read by the cookie-first FOUC
+  // init-script that vite.config injects into <head> — both sides hit the same
+  // store (key `agentaily:theme`), so the resolved theme is on <html> before first
+  // paint (zero flash). Cross-subdomain on *.agentaily.com; host-only cookie on
+  // localhost / preview (createStorage falls back automatically).
   return (
-    <ThemeProvider defaultTheme="dark">
+    <ThemeProvider defaultTheme="dark" storage={{ backend: "cookie" }}>
       <LocaleProvider>
         <DocumentTitle />
         <Landing />
