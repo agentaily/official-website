@@ -1,6 +1,6 @@
 # Agentaily 官网 (official-website) — 项目约定
 
-Agentaily Form 的**官方落地页** —— 双语 (en/zh)、深色主题、消费 `@agentaily/design-system` 的**纯静态前端站**。导航:
+Agentaily 的**官方落地页** —— 介绍「聊天 × 万物」**通用平台 / 框架**(聊一句即造出能用的应用,发布到市场、任何人可 fork 再造;不是一个个单独产品)。双语 (en/zh)、深色主题、消费 `@agentaily/design-system` 的**纯静态前端站**。导航:
 [README](./README.md)(怎么跑)· [SPEC.md](./SPEC.md)(落地页区块/架构)· [DESIGN.md](./DESIGN.md)(视觉/交互设计)·
 [ROADMAP.md](./ROADMAP.md)(能力地图)· [TESTING.md](./TESTING.md)(测试策略)·
 [`.claude/agents/README.md`](./.claude/agents/README.md)(sub agent 分工)。

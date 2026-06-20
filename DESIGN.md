@@ -13,7 +13,7 @@
 
 ## 设计原则 / 交互
 
-- **落地页(单页滚动)**:Nav → Hero(含聊天 demo + 主 CTA)→ 作品 (Works) → FAQ → 页脚,自上而下叙事(chat6 去掉了 About / 主理人区块)。
+- **落地页(单页滚动)**:Nav → Hero(平台价值主张「聊天造万物 + 市场 + fork」+ 聊天 demo + 主 CTA)→ 市场抢先看 (Works) → FAQ → 页脚,自上而下叙事(chat6 去掉了 About / 主理人区块)。**定位 = 通用平台 / 框架,不是某个单独产品**(详见 SPEC「定位」)。
 - **深色主题默认**(`data-theme="dark"`):品牌随上游 DS —— 极客风、简约、大气、科技感。
 - **双语 (en/zh)**:文案走 i18n catalog,默认中文,可切换;切换不丢滚动位置。
 - **响应式**:移动优先;断点 / 栅格随设计稿定,优先用 DS 布局原语。
@@ -29,13 +29,13 @@
 
 ## 页面 / 界面清单(+ 设计状态)
 
-落地页是**单页滚动**,从最新 handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)落地。**活动渲染树**:Nav → Hero → 作品 → FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是**死组件,不实现**。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
+落地页是**单页滚动**,从最新 handoff `8Q3zKqB6xqQ5Dd1YH2VXgg`(chat6 去 About)落地。**活动渲染树**:Nav → Hero → 市场抢先看(Works)→ FAQ → 页脚。原型里 PromptStrip / Philosophy / Services / HowWeWork / Contact / **About** 都是**死组件,不实现**。布局走 `src/styles/landing.css`(`aw-` 前缀,组合 DS token),组件一律消费 `@agentaily/design-system`。
 
 | 区块                                        | 设计状态  | 对应代码                                                                                                                   |
 | ------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Nav**(BrandMark + 锚点 + 语言 / 主题切换) | ✅ 已实现 | `src/components/Nav.tsx`                                                                                                   |
-| **Hero**(价值主张 + 主 CTA + 聊天 demo)     | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx`                                                                      |
-| **作品 (Works)**(三张作品卡)                | ✅ 已实现 | `src/sections/Works.tsx`                                                                                                   |
+| **Hero**(平台价值主张 + 主 CTA + 聊天 demo) | ✅ 已实现 | `src/sections/Hero.tsx` + `src/sections/heroDemo.tsx`                                                                      |
+| **市场抢先看 (Works)**(三张应用卡)          | ✅ 已实现 | `src/sections/Works.tsx`                                                                                                   |
 | **FAQ**(合作向 Accordion)                   | ✅ 已实现 | `src/sections/Faq.tsx`                                                                                                     |
 | **页脚 (Footer)**(品牌 / 链接 / 版权 / ICP) | ✅ 已实现 | `src/components/SiteFooter.tsx`                                                                                            |
 | 语言切换 (en/zh) + 深/浅主题                | ✅ 已实现 | `src/i18n/`(`createI18n` 工厂)+ `@agentaily/design-system` `ThemeProvider`(Nav 触发);跨子域持久化 + `themeInitScript` 防闪 |

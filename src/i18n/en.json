@@ -4,7 +4,7 @@
   },
   "nav": {
     "links": [
-      { "label": "Works", "href": "#works" },
+      { "label": "Market", "href": "#works" },
       { "label": "FAQ", "href": "#faq" }
     ],
     "switchLang": "中文",
@@ -13,10 +13,10 @@
   "hero": {
     "badge": "Chat × Everything",
     "prefix": "Chat to",
-    "phrases": ["build forms", "design tools", "ship apps", "make anything"],
-    "sub": "If you can chat, have taste, and know what you need — you can get anything.",
-    "ctaPrimary": "Let's talk",
-    "ctaSecondary": "See work"
+    "phrases": ["build an app", "make a tool", "design a page", "create anything"],
+    "sub": "Chat one line and it builds you a working app — front-end UI and back-end logic, running live in a sandbox. Publish to the market in one click; anyone can browse, fork, and make their own.",
+    "ctaPrimary": "See what it builds",
+    "ctaSecondary": "Share an idea"
   },
   "demo": {
     "live": "LIVE",
@@ -54,9 +54,9 @@
     ]
   },
   "works": {
-    "label": "Works",
-    "title": "Recent work",
-    "subtitle": "Each one solves a real problem in a real scenario.",
+    "label": "Market",
+    "title": "Market preview",
+    "subtitle": "Apps that started with one sentence — browse, fork, and remix any of them in the market.",
     "items": [
       {
         "status": "ok",
@@ -64,27 +64,27 @@
         "featured": true,
         "name": "Form Design",
         "zh": "Chat-generated online forms",
-        "desc": "Say a sentence, get an online form that collects data. Edit fields by chatting; share a link or QR to fill; responses auto-aggregate.",
+        "desc": "The first app built with Agentaily: say a sentence, get an online form that collects data. Edit fields by chatting; share a link or QR to fill; responses auto-aggregate.",
         "href": "https://form-design.agentaily.com/",
         "link": "form-design.agentaily.com"
       },
       {
         "status": "soon",
         "statusLabel": "In the works",
-        "name": "Next up",
-        "zh": "More Chat × Everything",
-        "desc": "Same approach, a different thing. Still polishing — forms first. Curious? Stay tuned.",
+        "name": "More apps",
+        "zh": "The market is growing",
+        "desc": "Same platform, far beyond forms — pages, tools, and mini-apps will keep landing in the market. Polishing the first one first.",
         "href": null,
         "link": "Coming soon"
       },
       {
         "status": "custom",
-        "statusLabel": "Custom",
+        "statusLabel": "Build your own",
         "name": "Your idea",
-        "zh": "Want a chat-driven tool?",
-        "desc": "Already have something in mind? Tell me what you need and I'll build it. Starts with one sentence.",
+        "zh": "Got an idea? Chat it out.",
+        "desc": "Already have something in mind? Say it, and let the platform build it — starts with one sentence. Publish it, fork it, it's yours.",
         "href": "mailto:yarnb@foxmail.com",
-        "link": "Tell me your idea"
+        "link": "Tell us what to build"
       }
     ]
   },
@@ -94,36 +94,36 @@
     "items": [
       {
         "id": "q1",
-        "title": "What kind of projects do you take?",
-        "content": "Chat-driven small tools, agents, and internal workflow tools fit best — the kind you can describe in a sentence and operate by conversation. I can't take on huge systems solo, but I can help you think through whether and how to build."
+        "title": "What is Agentaily?",
+        "content": "A general 'Chat × Everything' platform: chat one line and it builds you a working app — front-end plus back-end, running in a sandbox, published to a market anyone can fork. It's a platform / framework, not a single product."
       },
       {
         "id": "q2",
-        "title": "How do you charge?",
-        "content": "Depends on scope. Small tools might be a friend price or done on the side; serious custom work is quoted per project. Model calls usually go through BYOK (your own key), so that cost never passes through me."
+        "title": "What can it build?",
+        "content": "The kind of lightweight apps you can describe in a sentence and assemble by chatting — forms, pages, dashboards, small tools, approval flows… 'Everything' is the direction; we start where a conversation is enough."
       },
       {
         "id": "q3",
-        "title": "How long does it take?",
-        "content": "I work solo — good things take time. Simple ones: a few days; complex ones are scheduled by plan. I'd rather give an honest timeline than promise one I can't meet."
+        "title": "What is a generated app made of?",
+        "content": "Back-end logic described in aml, plus a set of front-end files. The platform runs it live in a sandbox — chat to tweak, preview instantly — and publishes it as a working online app when you're happy."
       },
       {
         "id": "q4",
-        "title": "I just have an idea, not fully thought out — can I still reach out?",
-        "content": "Of course. Talking a fuzzy idea into clarity is the first step anyway. Even if the conclusion is 'not worth building,' that saved you time."
+        "title": "What does fork mean?",
+        "content": "Any app in the market can be forked into your own copy, then reshaped with a few more lines of chat — no starting from scratch; build on top of what others already made."
       },
       {
         "id": "q5",
-        "title": "What's next for Chat × Everything?",
-        "content": "Forms are the first stop. Next I'll make more small things the same way. What exactly? A little secret — finish one, then talk about the next."
+        "title": "Is it usable today?",
+        "content": "The first app, Form Design, is already live and usable; the platform and market are still being polished. Want early access, or to build along? Let's talk."
       }
     ]
   },
   "footer": {
-    "tagline": "Chat, change the world.",
+    "tagline": "One sentence, one working app.",
     "cols": [
       {
-        "head": "Works",
+        "head": "Market",
         "links": [
           { "label": "Form Design · Live", "href": "https://form-design.agentaily.com/" },
           { "label": "More · In the works", "href": null }

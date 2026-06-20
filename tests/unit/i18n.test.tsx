@@ -31,7 +31,7 @@ test("defaults to zh and exposes the zh catalog", () => {
     </LocaleProvider>,
   );
   expect(screen.getByTestId("locale")).toHaveTextContent("zh");
-  expect(screen.getByTestId("sub")).toHaveTextContent("会聊天、有审美");
+  expect(screen.getByTestId("sub")).toHaveTextContent("跟 AI 聊一句");
 });
 
 test("setLocale swaps the active catalog zh → en → zh", () => {
@@ -42,11 +42,11 @@ test("setLocale swaps the active catalog zh → en → zh", () => {
   );
   fireEvent.click(screen.getByText("to-en"));
   expect(screen.getByTestId("locale")).toHaveTextContent("en");
-  expect(screen.getByTestId("sub")).toHaveTextContent("If you can chat");
+  expect(screen.getByTestId("sub")).toHaveTextContent("Chat one line");
 
   fireEvent.click(screen.getByText("to-zh"));
   expect(screen.getByTestId("locale")).toHaveTextContent("zh");
-  expect(screen.getByTestId("sub")).toHaveTextContent("会聊天、有审美");
+  expect(screen.getByTestId("sub")).toHaveTextContent("跟 AI 聊一句");
 });
 
 test("exposes both locales", () => {

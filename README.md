@@ -1,6 +1,6 @@
 # Agentaily 官网 (official-website)
 
-**Agentaily Form 的官方落地页** —— 双语 (en/zh)、深色主题、消费 [`@agentaily/design-system`](https://github.com/agentaily/design-system) 的**纯静态前端站**。
+**Agentaily 的官方落地页** —— 「聊天 × 万物」**通用平台**(跟 AI 聊一句即造出能用的应用,发布到市场、任何人可 fork 再造;不是一个个单独产品)的对外门面。双语 (en/zh)、深色主题、消费 [`@agentaily/design-system`](https://github.com/agentaily/design-system) 的**纯静态前端站**。
 
 > 这是**部署的站,不是发布的包**:合并到 `main` 即由 GitHub Actions 部署到 Cloudflare Pages。它不发 npm、没有后端 / workers / D1。
 
@@ -20,7 +20,7 @@ npm run format       # prettier --write .
 
 ## 这是什么 / 长什么样
 
-- **双语落地页**:Nav → Hero(含聊天 demo)→ 作品 (Works) → FAQ → 页脚。区块 spec 见 [SPEC.md](./SPEC.md);详细视觉/交互设计见 [DESIGN.md](./DESIGN.md)(从 Claude Design handoff `8Q3zKq` 落地)。
+- **双语落地页**:Nav → Hero(含聊天 demo)→ 市场抢先看 (Market) → FAQ → 页脚。区块 spec 见 [SPEC.md](./SPEC.md);详细视觉/交互设计见 [DESIGN.md](./DESIGN.md)(从 Claude Design handoff `8Q3zKq` 落地)。
 - **深色主题**:`<html data-theme="dark">`,Nav 里可切深/浅;对齐 Agentaily 品牌(极客风、简约、大气、科技感)。
 - **i18n**:`LocaleProvider` + `useMessages()`(`src/i18n/`,文案全在 `en.json` / `zh.json`),默认中文,Nav 里可切英文。
 
