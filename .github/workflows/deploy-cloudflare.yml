@@ -1,9 +1,10 @@
 name: Deploy to Cloudflare Pages
 
+# ⚠️ 退役(2026-06-20):agentaily.com 现由 monorepo `agentaily/agentaily` 的 `apps/website`
+# 经其 `deploy-website.yml` 部署到同一个 CF 项目 `official-website`。本独立仓与 monorepo 曾
+# 同时部署 → 互相覆盖、线上反复回退。故**移除本仓的 push 自动部署**(仅留手动 workflow_dispatch),
+# 由 monorepo 作为 agentaily.com 的单一来源。本仓 = legacy,内容以 monorepo apps/website 为准。
 on:
-  # Auto-deploy on every push to main.
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
