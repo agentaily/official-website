@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Agentaily Form 官网 — 双语 (en/zh) 落地页,消费 @agentaily/design-system,纯静态前端站。",
+  "description": "Agentaily 官网 — 「聊天 × 万物」通用平台落地页,双语 (en/zh),消费 @agentaily/design-system,纯静态前端站。",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

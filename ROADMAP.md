@@ -10,6 +10,7 @@
 - **落地页实现(PR #1)** —— 从 Claude Design handoff `8Q3zKq` 落地单页:Nav → Hero(含聊天 demo)→ 作品 (Works) → FAQ → 页脚(chat6 去掉 About),全程消费 DS 组件、双语填实、深/浅可切、滚动入场。文案全在 `en.json` / `zh.json`。设计真相见 [DESIGN.md](./DESIGN.md),行为契约见 [`features/`](./features)。
 - **接入共享浏览器运行时(PR #4)** —— 主题(亮/暗/system)+ i18n(en/zh)+ 偏好持久化迁移到共享浏览器运行时:删手搓 `src/lib/useTheme.ts` 与 i18n provider,换 `ThemeProvider` / `useTheme` + `createI18n` 工厂(catalog 仍在本仓 `en.json`/`zh.json`)。新增:跨 `*.agentaily.com` 子域 cookie 持久化、首访 `navigator` 语言探测(zh 兜底)、`themeInitScript` 防 FOUC;切语言改为 context 即时重渲染(不再 reload)。
 - **收敛到单一上游 DS(PR #5)** —— 把上条的浏览器运行时(主题 / i18n / 持久化)从已弃用的 `@agentaily/web-kit` 迁到 `@agentaily/design-system` `^0.15`(0.15.0 把 web-kit 的同名运行时移植进 DS,导出名一字不差、行为逐字段等价):换 import 源 + 删 `@agentaily/web-kit` 依赖,**纯机械、行为零变化**(cookie key `agentaily:theme` / `domain=.agentaily.com`、navigator 探测、`<html lang>` 全不变)。自此单一上游 DS 同时供视觉组件 + 浏览器运行时。
+- **定位重构:产品 → 通用平台** —— 把官网叙事从「Agentaily Form / 一个个单独产品」整体重构成**「聊天 × 万物」通用平台 / 框架**:Hero 主副标语讲「聊一句即造出能用应用(aml 后端 + 前端文件、沙箱运行)→ 发布市场 → 任何人 fork 再造」;Works 改为「市场抢先看」(Form Design = 平台造的第一个应用,而非站点本身);FAQ 全面改写为平台向(是什么 / 能造什么 / 应用由什么组成 / fork / 现状)。**纯文案 + 真相源文档同步**,结构 / 技术栈 / 组件不动、零新依赖(仅 Hero 两个 CTA 接线互换:主 = 看市场、次 = 聊想法)。详见 [SPEC.md](./SPEC.md) 定位 + [DESIGN.md](./DESIGN.md)。
 
 ## 🚧 进行中
 

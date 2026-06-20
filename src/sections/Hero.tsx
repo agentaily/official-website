@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 import { useMessages } from "../i18n";
 import { GenCanvas, Typewriter } from "./heroDemo";
 
-// Where the "let's talk" CTA points. Not user-visible copy (it's an action
-// target); the address itself also appears as catalog text in Works / Footer.
+// Where the secondary "share an idea" CTA points. Not user-visible copy (it's an
+// action target); the address itself also appears as catalog text in Works / Footer.
 const CONTACT_MAILTO = "mailto:yarnb@foxmail.com";
 
 function scrollToId(id: string) {
@@ -59,16 +59,16 @@ export function Hero() {
         </h1>
         <p className="aw-hero__sub">{hero.sub}</p>
         <div className="aw-hero__ctas">
+          <Button variant="primary" size="lg" onClick={() => scrollToId("works")}>
+            {hero.ctaPrimary}
+          </Button>
           <Button
-            variant="primary"
+            variant="secondary"
             size="lg"
             onClick={() => {
               window.location.href = CONTACT_MAILTO;
             }}
           >
-            {hero.ctaPrimary}
-          </Button>
-          <Button variant="secondary" size="lg" onClick={() => scrollToId("works")}>
             {hero.ctaSecondary}
           </Button>
         </div>
