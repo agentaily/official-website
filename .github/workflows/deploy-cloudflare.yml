@@ -38,3 +38,18 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=official-website --branch=main
+
+      # Catch "deployed but production still serves the old build" (a CF Pages
+      # promotion/cache glitch we hit once): assert the live prod alias serves the
+      # exact bundle we just built; retry for propagation, fail (red CI) if it never does.
+      - name: Verify production serves the new build
+        run: |
+          HASH=$(grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' dist/index.html | head -1)
+          echo "expecting prod to serve bundle: $HASH"
+          for i in $(seq 1 12); do
+            LIVE=$(curl -s "https://official-website-bcm.pages.dev/?cb=$RANDOM$i" | grep -oE 'assets/index-[A-Za-z0-9_-]+\.js' | head -1)
+            echo "attempt $i: prod serves $LIVE"
+            [ "$LIVE" = "$HASH" ] && { echo "✓ production is serving the new build"; exit 0; }
+            sleep 15
+          done
+          echo "✗ production NOT serving the new build ~3min after deploy — stale prod alias / cache"; exit 1
